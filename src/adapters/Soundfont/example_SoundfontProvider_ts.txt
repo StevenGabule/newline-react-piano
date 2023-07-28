@@ -1,0 +1,21 @@
+import {ReactElement, FunctionComponent, useState, useEffect, useRef, useCallback} from 'react'
+import Soundfont, { InstrumentName, Player } from 'soundfont-player';
+import { MidiValue } from '../../domain/note';
+import { Optional } from '../../domain/types';
+import { AudioNodesRegistry, DEFAULT_INSTRUMENT } from '../../domain/sound';
+
+type ProvidedProps = {
+	loading: boolean
+	play(note: MidiValue): Promise<void>
+	stop(note: MidiValue): Promise<void>
+}
+
+type ProviderProps = {
+	instruments?: InstrumentName
+	AudioContext: AudioContextType
+	render(props: ProvidedProps) : ReactElement
+}
+
+function renderKeyBoard({play, loading, stop}: ProvidedProps) : ReactElement {
+	return 
+}
